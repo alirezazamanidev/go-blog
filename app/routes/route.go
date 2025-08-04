@@ -14,5 +14,6 @@ func SetUp(router *gin.Engine,db *gorm.DB,rdb *redis.Client){
 	authRoute:=router.Group("auth");
 	{
 		authRoute.POST("/send-otp",authController.SendOtp);
+		authRoute.POST("/check-otp",authController.CheckOtp);
 	}
 }
