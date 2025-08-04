@@ -14,6 +14,8 @@ type Config struct {
 	DbUser string
 	DbPass string
 	DbName string
+	RedisHost string
+	RedisPort string
 }
 
 func Load() (*Config){
@@ -29,7 +31,8 @@ func Load() (*Config){
 		DbHost: os.Getenv("DB_HOST"),
 		DbUser: os.Getenv("DB_USER"),
 		DbName: os.Getenv("DB_NAME"),
-
+		RedisHost: os.Getenv("REDIS_HOST"),
+		RedisPort: os.Getenv("REDIS_PORT"),
 	}
 
 	return &config
